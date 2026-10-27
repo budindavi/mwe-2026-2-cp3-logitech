@@ -20,7 +20,15 @@ direção. Pode usar Mermaid, que o GitHub renderiza. -->
 
 ```mermaid
 flowchart LR
-    A[Contexto A] --> B[Contexto B]
+    Telemetria -- "Fornece comprovação de parada" --> Garantia[Garantia de Prazo]
+    Frete -- "Emite Confirmação de Entrega" --> Garantia
+    
+    Garantia -- "Comanda emissão de nota" --> Faturamento
+    Garantia -- "Comanda disparo de mensagem" --> Notificações
+    
+    Telemetria -- "Envia posições ao vivo (SSE/WS)" --> Portal[Portal do Cliente]
+    Garantia -- "Envia atualização de saldo" --> Portal
+    Frete -- "Fornece previsão de chegada" --> Portal
 ```
 
 ## Entidades e agregados
