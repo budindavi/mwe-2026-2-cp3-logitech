@@ -6,7 +6,7 @@
 usado (TCP, UDP, HTTP, SSE, ...). -->
 
 ```mermaid
-lowchart LR
+flowchart LR
     Veiculo -->|UDP| Telemetria
     Frete -->|AMQP / Kafka| Garantia[Garantia de Prazo]
     Garantia -->|gRPC / HTTP| Faturamento
