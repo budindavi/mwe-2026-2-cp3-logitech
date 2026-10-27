@@ -1,9 +1,5 @@
 # 4. Tela do Portal do Cliente (RF10)
 
-## Estados da tela
-
-<!-- A tela é uma função do estado. Liste os estados possíveis da tela de
-acompanhamento de um pedido e o que o cliente vê em cada um. -->
 
 ## Estados da tela
 
