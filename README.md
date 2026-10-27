@@ -6,7 +6,7 @@ Prof. José Romualdo · Checkpoint 3 · 27/10/2026 · Atividade em dupla · Dura
 ## Dupla
 
 | Nome | RM |
-|---|---|
+| Davi Budin Pina | 560135 |
 | | |
 | | |
 
