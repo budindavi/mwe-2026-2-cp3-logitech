@@ -38,7 +38,9 @@ regra de consistência que ele protege. -->
 
 | Agregado | Raiz | Entidades e objetos de valor | Regra que protege |
 |---|---|---|---|
-| | | | |
+| **ConcessaoCredito** | `PedidoGarantia` (Entidade) | `PoliticaCliente` (Entidade), `Atraso` (Objeto de Valor), `ValorCredito` (Objeto de Valor) | O crédito não pode ultrapassar o teto da política do cliente (R$ 500 Varejo ou R$ 2.000 Corporativo) e zera se a telemetria comprovar ausência. |
+| **EmissaoNota** | `NotaCredito` (Entidade) | `NumeroSequencial` (Objeto de Valor), `Valor` (Objeto de Valor) | Garante que cada crédito gere um número de nota estritamente sequencial e nunca repetido, mesmo sob concorrência. |
+| **EnvioMensagem** | `Notificacao` (Entidade) | `Canal` (Objeto de Valor), `Tentativas` (Objeto de Valor) | Garante que uma falha de envio será retentada até 3 vezes e a falha final não será descartada em silêncio. |
 
 ## Linguagem ubíqua
 
@@ -47,4 +49,8 @@ crédito, teto, ausência comprovada. -->
 
 | Termo | Definição |
 |---|---|
-| | |
+| **Atraso** | Diferença de tempo medida em horas entre o prazo originalmente prometido pelo serviço de Frete e a confirmação efetiva da entrega. |
+| **Ausência Comprovada** | Condição em que o veículo fica parado a até 200 m do endereço por pelo menos 10 min antes do registro da ausência do destinatário. |
+| **Teto de Crédito** | Limite máximo financeiro de compensação por pedido (R$ 500 para Varejo e R$ 2.000 para Corporativo). |
+| **Cliente Cortesia** | Cliente com frete zero, que não é elegível a receber crédito financeiro por atraso, recebendo apenas notificação. |
+| **Nota de Crédito** | Registro contábil gerado no Faturamento com número sequencial e único para oficializar o crédito ao cliente. |
